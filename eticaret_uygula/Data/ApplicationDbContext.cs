@@ -1,9 +1,10 @@
 ﻿using eticaret_uygula.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace eticaret_uygula.Data
 {
-    public class ApplicationDbContext : DbContext//veritabanımaızla bağlantımızı kurduk.
+    public class ApplicationDbContext : IdentityDbContext<AppUser,AppRole,int>//veritabanımaızla bağlantımızı kurduk.
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext>options):base(options)//DbContext ayarlarını yaptık.
         {
